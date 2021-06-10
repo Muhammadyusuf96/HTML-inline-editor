@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery-3.6.0.js"></script>
+    <script defer src="js.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src='tidy.js'></script>
+    <script src="highlight.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fa.css">
+    <link rel="stylesheet" href="default.min.css">
+    <title>Simple WYSIWYG Editor</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div id='editControls'>
+                <!--h1>World Simplest HTML5 WYSISYG Inline Editor</h1-->
+                <div>
+                    <a data-role='file' href='javascript:new_doc()' data-toggle="tooltip" data-placement="bottom" title="New File"><i class='fa fa-file'></i></a>
+                    <a data-role='copy' href='javascript:copy_val()' data-toggle="tooltip" data-placement="bottom" title="Copy HTML"><i class='fa fa-copy'></i></a>
+                    <a data-role='undo' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Undo"><i class='fa fa-undo'></i></a>
+                    <a data-role='redo' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Redo"><i class='fa fa-repeat'></i></a>
+                    <a data-role='bold' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Bold"><i class='fa fa-bold'></i></a>
+                    <a data-role='italic' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Italic"><i class='fa fa-italic'></i></a>
+                    <a data-role='underline' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Underline"><i class='fa fa-underline'></i></a>
+                    <a data-role='strikeThrough' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Strikethrough"><i class='fa fa-strikethrough'></i></a>
+                    <a data-role='justifyLeft' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Justify left"><i class='fa fa-align-left'></i></a>
+                    <a data-role='justifyCenter' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Center"><i class='fa fa-align-center'></i></a>
+                    <a data-role='justifyRight' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Justify right"><i class='fa fa-align-right'></i></a>
+                    <a data-role='justifyFull' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Justify full"><i class='fa fa-align-justify'></i></a>
+                    <a data-role='indent' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Indent"><i class='fa fa-indent'></i></a>
+                    <a data-role='outdent' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Outdent"><i class='fa fa-outdent'></i></a>
+                    <a data-role='insertUnorderedList' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Unordered list"><i class='fa fa-list-ul'></i></a>
+                    <a data-role='insertOrderedList' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Ordered list"><i class='fa fa-list-ol'></i></a>
+                    <a data-role='h1' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Header size 1">h<sup>1</sup></a>
+                    <a data-role='h2' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Header size 2">h<sup>2</sup></a>
+                    <a data-role='p' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Paragraph">p</a>
+                    <a data-role='subscript' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Subscript"><i class='fa fa-subscript'></i></a>
+                    <a data-role='superscript' href='javascript:void(0)' data-toggle="tooltip" data-placement="bottom" title="Superscript"><i class='fa fa-superscript'></i></a>
+                </div>
+            </div>
+            <div id="dtitle"><input id="title" type="text" class="input-element" onkeypress="update_output()"></span></div>
+            <div><input type="checkbox" id="checkbox_body" onclick="update_output()"><label>Only body</label></div>
+            <div class="row">
+                <div class="col" id='editor' contenteditable></div>
+                <div class="col" id='output' contenteditable>
+                    <pre><code id="language-html"></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
